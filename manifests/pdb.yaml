@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: air-travel
+  labels:
+    app.kubernetes.io/name: air-travel
+    app.kubernetes.io/part-of: air-travel-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: air-travel
